@@ -1,0 +1,26 @@
+<div class="card m-4"  *ngFor="let user of users;index as i ">
+
+  <div class="card-body">
+  Cart {{i+1}}
+
+    <strong>  Date: {{user.date | date}} </strong>
+    <div *ngIf="user.products">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Quantity</th>
+        </tr>
+        </thead>
+        <tbody  >
+        <tr *ngFor="let product of user.products ">
+          <th scope="row">{{product.productId}}</th>
+          <td>{{product.quantity}}</td>
+
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

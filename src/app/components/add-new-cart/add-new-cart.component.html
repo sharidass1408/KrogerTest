@@ -1,0 +1,17 @@
+
+  <div class="mb-3">
+    <label  class="form-label">User Id</label>
+    <input type="number" class="form-control"  [(ngModel)] ="userId">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Select Product </label>
+    <select class="form-select"   aria-label="multiple select example" [(ngModel)] ="productId">
+      <option selected>Open this select Product</option>
+      <option value="{{product.id}}" *ngFor="let product of products">{{product.title}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Quantity</label>
+    <input type="number" class="form-control" [(ngModel)]="quantity" >
+  </div>
+  <button type="button" (click)="addCart()" class="btn btn-primary">Add to Cart</button>
